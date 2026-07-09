@@ -3,7 +3,7 @@
 
   # Tekoá-Hur — Documentación Técnica
 
-  **Sistema de control de asistencia académica mediante código QR**
+ **Sistema de gestión académica** desarrollado como proyecto final de la **Universidad Nacional de Hurlingham (UNAHUR)**
 
   [![Licencia: GPL v3](https://img.shields.io/badge/Licencia-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
   [![Universidad](https://img.shields.io/badge/UNAHUR-Proyecto%202026-green)](https://www.unahur.edu.ar)
@@ -13,93 +13,38 @@
 
 ---
 
-## Descripción general
 
-Tekoá-Hur es un sistema web desarrollado como **proyecto de grado** en la **Universidad Nacional de Hurlingham (UNAHUR)**. Permite gestionar la asistencia de estudiantes universitarios mediante códigos QR generados en el aula, con confirmación docente y reportes para administración.
 
-El nombre *Tekoá* proviene del guaraní y significa *comunidad* o *aldea*, reflejando el espíritu colaborativo del proyecto.
 
----
+Tekoá-Hur es una plataforma web integral orientada a instituciones educativas que permite gestionar los procesos académicos: registro de asistencia por QR, matrículas de estudiantes, reservas de espacios físicos, importación de planillas maestras (aulas y comisiones) y auditoría de todas las operaciones.
 
-## Repositorios del proyecto
+La aplicación cubre múltiples procesos: docentes y alumnos registran asistencia mediante QR, administradores gestionan aulas y sus atributos, coordinan matrículas entre comisiones, reservan espacios y visualizan el calendario global, e importan planillas Excel con auditoría completa. Todo desde una plataforma centralizada que elimina los registros manuales y facilita un seguimiento eficiente.
 
-| Repositorio | Descripción | Link |
-|-------------|-------------|------|
-| **Tekoa-Hur-Front** | Aplicación web — Next.js + TypeScript | [Ver repo](https://github.com/tekoa-hur/Tekoa-Hur-Front) |
-| **Tekoa-Hur-Back**  | API REST — Node.js + Express + PostgreSQL | [Ver repo](https://github.com/tekoa-hur/Tekoa-Hur-Back) |
-| **Tekoa-Hur-Doc**   | Este repositorio — Documentación técnica | [Ver repo](https://github.com/tekoa-hur/Tekoa-Hur-Doc) |
+## ¿Cuál fue nuestra motivación?
 
----
+Actualmente, muchas instituciones continúan utilizando registros manuales para controlar la asistencia académica. Esto genera problemas como:
+* Pérdida o manipulación de datos
+* Falta de trazabilidad
+* Procesos lentos y repetitivos
+* Dificultad para consultar historiales
 
-## Documentación disponible
 
-| Documento | Descripción |
-|-----------|-------------|
-| [Arquitectura del sistema](docs/arquitectura.md) | Diagrama de 3 capas, flujo de datos, decisiones técnicas |
-| [Documentación Frontend](docs/frontend.md) | Stack, estructura, rutas, componentes, variables de entorno |
-| [Documentación Backend](docs/backend.md) | API REST, controllers, modelos, autenticación, Swagger |
-| [Base de datos](docs/base-de-datos.md) | Entidades, relaciones, migraciones, seeders |
-| [Guía de instalación](docs/instalacion.md) | Paso a paso para levantar el proyecto localmente |
-| [Endpoints de la API](docs/api-endpoints.md) | Referencia completa de todos los endpoints REST |
-| [DevOps — CI/CD y Docker](docs/devops.md) | GitHub Actions, Dockerfile, estrategia de ramas |
-| [Flujo QR — Casos de uso](docs/flujo-qr.md) | Cómo funciona el sistema de asistencia con QR |
-| [Seguridad](docs/seguridad.md) | Autenticación Basic Auth, roles, buenas prácticas |
+## Repositorios
 
----
-
-## Integrantes
-
-| Nombre | Rol |
-|--------|-----|
-| Miranda Tomás | Desarrollo Full Stack |
-| Amarilla Silvia Adriana | Desarrollo Full Stack |
-| Amarillo Juan Felipe Yamil | Desarrollo Full Stack |
-
----
+- **Backend**: https://github.com/tekoa-hur/Tekoa-Hur-Back (rama `develop`)
+- **Frontend**: https://github.com/tekoa-hur/Tekoa-Hur-Front (rama `develop`)
 
 ## Stack tecnológico
 
-```
-Frontend:   Next.js 15 · React 19 · TypeScript · Tailwind CSS
-Backend:    Node.js · Express · Sequelize ORM · Swagger UI
-Base datos: PostgreSQL 14+
-DevOps:     Docker · GitHub Actions · Git (rama develop)
-Licencia:   GPL v3
-```
+| Capa | Tecnología |
+|------|------------|
+| Frontend | Next.js 15 (App Router), React 19, Tailwind CSS, Material UI |
+| Backend | Node.js, Express |
+| ORM | Sequelize |
+| Base de datos | PostgreSQL |
+| Autenticación | JWT |
+| Documentación de API | Swagger UI |
 
----
-
-## Inicio rápido
-
-```bash
-# 1. Clonar los repositorios
-git clone https://github.com/tekoa-hur/Tekoa-Hur-Back.git
-git clone https://github.com/tekoa-hur/Tekoa-Hur-Front.git
-
-# 2. Configurar backend
-cd Tekoa-Hur-Back
-cp .env.ejemplo .env          # completar variables
-npm install
-npx sequelize-cli db:create
-node sync.js
-npx sequelize-cli db:seed:all
-node index.js                 # → http://localhost:3001
-
-# 3. Configurar frontend (en otra terminal)
-cd Tekoa-Hur-Front
-cp .env.example .env.local    # completar variables
-npm install
-npm run dev                   # → http://localhost:3000
-```
-
-> Documentación completa en [docs/instalacion.md](docs/instalacion.md)
-
----
-
-## Licencia
-
-Este proyecto se distribuye bajo los términos de la **[GNU General Public License v3.0](LICENSE)**.
-El código fuente es libre: cualquier institución puede usarlo, modificarlo y redistribuirlo, siempre que mantenga la misma licencia.
 
 ---
 
